@@ -26,38 +26,37 @@ This project demonstrates three critical CUDA optimization concepts:
 
 ## Prerequisites
 
-- Python 3.7+
-- NVIDIA GPU with CUDA support
-- CUDA Toolkit installed
-
-### Required Python Packages
-
-```bash
-pip install numba numpy matplotlib pandas jupyter
-```
-
-### Verify CUDA Installation
-
-```bash
-python3 -c "from numba import cuda; print(f'CUDA Available: {cuda.is_available()}')"
-```
+- Google account (for Google Colab)
+- Or local setup with:
+  - Python 3.7+
+  - NVIDIA GPU with CUDA support
+  - CUDA Toolkit installed
 
 ## Running the Project
 
-### Option 1: Interactive Jupyter Notebook
+### Option 1: Google Colab (Recommended)
+
+This project was developed and tested on Google Colab with GPU runtime.
+
+1. Upload the notebook to Google Colab
+2. Enable GPU runtime: **Runtime → Change runtime type → GPU**
+3. Run cells sequentially with Shift+Enter
+
+Colab provides free access to NVIDIA Tesla T4 GPUs with all required packages pre-installed.
+
+### Option 2: Local Jupyter Notebook
 
 ```bash
+# Install required packages
+pip install numba numpy matplotlib pandas jupyter
+
+# Verify CUDA installation
+python3 -c "from numba import cuda; print(f'CUDA Available: {cuda.is_available()}')"
+
 # Start Jupyter
 jupyter notebook
 
 # Open notebooks/A05_Warp_Divergence_Analysis.ipynb
-# Run cells sequentially with Shift+Enter
-```
-
-### Option 2: Command Line Execution
-
-```bash
-jupyter nbconvert --execute --to notebook notebooks/A05_Warp_Divergence_Analysis.ipynb
 ```
 
 ## Experiments
@@ -148,12 +147,6 @@ Ensure Numba version is compatible with your CUDA Toolkit version:
 ```bash
 pip install --upgrade numba
 ```
-
-## Further Reading
-
-- [NVIDIA CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
-- [Numba CUDA Documentation](https://numba.readthedocs.io/en/stable/cuda/index.html)
-- [GPU Occupancy Calculator](https://developer.nvidia.com/cuda-occupancy-calculator)
 
 ## Author
 
